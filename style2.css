@@ -1,0 +1,88 @@
+*{
+    margin: 0;
+}
+
+header{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+}
+main{
+    display: flex;
+    flex-direction: row;
+}
+.choice{
+    display: flex;
+    flex-direction: column;
+}
+.sizeCoffee{
+    display: flex;
+    flex-direction: row;
+    gap: 10px;
+}
+/*.extraCoffee{
+    
+}
+.milkTypeCoffee{
+    
+}*/
+.but_vib{
+    border-radius: 10px;
+    color: black;
+    width: 80px;
+    height: 30px;
+    background: rgb(243, 243, 243);
+    border: 1px solid rgb(243, 243, 243);
+}
+.but_vib:hover{
+    background: #AC8F64;
+    border: 1px solid black;
+}
+.but_vib:focus{
+    background: #AC8F64;
+    border: 1px solid black;
+}
+
+
+
+
+
+
+.update{
+    display: flex;
+    width: 400px;
+    height: 965px;
+    position: fixed;
+    top: 50%;
+    left: 62.6%;
+    transform: translate(-40%, -50%);
+    flex-direction: column;
+    justify-content: center;
+    background: rgb(209, 209, 209);
+}
+.update_form{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    margin-top: 10px;
+    margin-left: 10px;
+}
+.mainOreder{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+}
+#exithide{
+    text-decoration: none;
+    color: black;
+    margin-top: 10px;
+}
+#exithide:hover{
+    color: #AC8F64;
+}
+.close{
+    display: none;
+}
+.open{
+    display: block;
+}
