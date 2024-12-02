@@ -26,20 +26,21 @@ main{
 .milkTypeCoffee{
     
 }*/
-.but_vib{
+.but_vib_size, .but_vib_extra, .but_vib_milktype{
     border-radius: 10px;
     color: black;
-    width: 80px;
+    width: 100px;
     height: 30px;
     background: rgb(243, 243, 243);
     border: 1px solid rgb(243, 243, 243);
 }
-.but_vib:hover{
-    background: #AC8F64;
+.but_vib_size:hover{
     border: 1px solid black;
 }
-.but_vib:focus{
-    background: #AC8F64;
+.but_vib_extra:hover{
+    border: 1px solid black;
+}
+.but_vib_milktype:hover{
     border: 1px solid black;
 }
 
@@ -50,11 +51,11 @@ main{
 
 .update{
     display: flex;
-    width: 400px;
+    width: 500px;
     height: 965px;
     position: fixed;
-    top: 50%;
-    left: 62.6%;
+    top: 60%;
+    left: 85%;
     transform: translate(-40%, -50%);
     flex-direction: column;
     justify-content: center;
@@ -64,7 +65,7 @@ main{
     display: flex;
     flex-direction: column;
     justify-content: center;
-    margin-top: 10px;
+    margin-top: 20px;
     margin-left: 10px;
 }
 .mainOreder{
