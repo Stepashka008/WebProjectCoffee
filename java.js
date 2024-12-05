@@ -15,17 +15,17 @@ const Black = [
     price: 299,
   },
   {
-    image: "images/Four.jpg",
+    image: "images/Two.jpg",
     name: "BlackLamburfini",
     price: 399,
   },
   {
-    image: "images/Five.jpg",
+    image: "images/Three.jpg",
     name: "Blackicano Packet Traicer",
     price: 499,
   },
   {
-    image: "images/Six.jpg",
+    image: "images/One.jpg",
     name: "Black Milk and Sugar",
     price: 599,
   },
@@ -52,29 +52,29 @@ const Capuchino = [
     price: 299,
   },
   {
-    image: "images/Three.jpg",
+    image: "images/One.jpg",
     name: "Lamburfini",
     price: 399,
   },
   {
-    image: "images/Four.jpg",
+    image: "images/Two.jpg",
     name: "Zisko Packet Traicer",
     price: 499,
   },
   {
-    image: "images/Five.jpg",
+    image: "images/Three.jpg",
     name: "Milk and Sugar",
     price: 599,
   },
   {
-    image: "images/Six.jpg",
+    image: "images/One.jpg",
     name: "Donatelo and Raf",
     price: 699,
   },
 ];
 const Americano = [
   {
-    image: "images/Six.jpg",
+    image: "images/One.jpg",
     name: "Americano and Cocoa",
     price: 99,
   },
@@ -84,7 +84,7 @@ const Americano = [
     price: 199,
   },
   {
-    image: "images/One.jpg",
+    image: "images/Two.jpg",
     name: "Ameriinziala",
     price: 299,
   },
@@ -94,29 +94,29 @@ const Americano = [
     price: 399,
   },
   {
-    image: "images/Three.jpg",
+    image: "images/One.jpg",
     name: "Americano Packet Traicer",
     price: 499,
   },
   {
-    image: "images/Four.jpg",
+    image: "images/Three.jpg",
     name: "Amer Milk and Sugar",
     price: 599,
   },
   {
-    image: "images/Five.jpg",
+    image: "images/Three.jpg",
     name: "Amer Donatelo and Raf",
     price: 699,
   },
 ];
 const Latte = [
   {
-    image: "images/Five.jpg",
+    image: "images/Two.jpg",
     name: "Latte and Cocoa",
     price: 99,
   },
   {
-    image: "images/Six.jpg",
+    image: "images/One.jpg",
     name: "Latte mo desto",
     price: 199,
   },
@@ -141,24 +141,24 @@ const Latte = [
     price: 599,
   },
   {
-    image: "images/Four.jpg",
+    image: "images/Three.jpg",
     name: "Latte Donatelo and Raf",
     price: 699,
   },
 ];
 const Expresso = [
   {
-    image: "images/Four.jpg",
+    image: "images/Two.jpg",
     name: "Expresso and Cocoa",
     price: 99,
   },
   {
-    image: "images/Five.jpg",
+    image: "images/Three.jpg",
     name: "Expresso mo desto",
     price: 199,
   },
   {
-    image: "images/Six.jpg",
+    image: "images/One.jpg",
     name: "Expressoiinziala",
     price: 299,
   },
@@ -195,17 +195,17 @@ const Flat = [
     price: 199,
   },
   {
-    image: "images/Four.jpg",
+    image: "images/One.jpg",
     name: "Flatiinziala",
     price: 299,
   },
   {
-    image: "images/Five.jpg",
+    image: "images/One.jpg",
     name: "FlatLamburfini",
     price: 399,
   },
   {
-    image: "images/Six.jpg",
+    image: "images/Two.jpg",
     name: "Flaticano Packet Traicer",
     price: 499,
   },
@@ -237,17 +237,17 @@ const Rus = [
     price: 299,
   },
   {
-    image: "images/Four.jpg",
+    image: "images/Three.jpg",
     name: "RusLamburfini",
     price: 399,
   },
   {
-    image: "images/Five.jpg",
+    image: "images/One.jpg",
     name: "Rusicano Packet Traicer",
     price: 499,
   },
   {
-    image: "images/Six.jpg",
+    image: "images/Two.jpg",
     name: "Rus Milk and Sugar",
     price: 599,
   },
@@ -309,10 +309,26 @@ const NameCoffeeForMe = [
   "Rus Donatelo and Raf"
 ]
 
-let navKar = document.querySelector("#navKar");
-let boxCoffe = document.querySelector("#boxCoffee");
+const navKar = document.querySelector("#navKar");
+const boxCoffe = document.querySelector("#boxCoffee");
 const update = document.querySelector('.update'); // Наше окно order status
 const silka = document.querySelector('.OS');
+const brow = document.querySelector(".input-with-icon");
+const couCof = document.querySelector(".countOrder");
+
+// Загрузка списка заказов
+let listOrder = [];
+!localStorage.listOrder ? listOrder = [] : listOrder = JSON.parse(localStorage.getItem('listOrder')); 
+
+// count - сколько кофе заказали в OS
+const cou_Coff = () => {
+  let k = 0;
+  listOrder.forEach(lis => {
+    k += lis[4];
+  })
+  couCof.innerHTML = `<p>${k}</p>`;
+}
+cou_Coff();
 
 // Отображение выбраного вида кофе
 const showCoffees = (
@@ -330,17 +346,26 @@ const showCoffees = (
         <div class="cardCoffee">
             <img src="${coffOneIm}" alt="Фотография_Кофе">
             <p>${coffOneName}</p>
-            <button onclick="vibor('${coffOneName}', ${coffOnePrice}, '${coffOneIm}')">${coffOnePrice}р</button>
+            <div class="addCof">
+              <p>${coffOnePrice}р</p>
+              <button onclick="vibor('${coffOneName}', ${coffOnePrice}, '${coffOneIm}')">+</button>
+            </div>
         </div>
         <div class="cardCoffee">
             <img src="${coffTwoIm}" alt="Фотография_Кофе">
             <p>${coffTwoName}</p>
-            <button onclick="vibor('${coffTwoName}', ${coffTwoPrice}, '${coffTwoIm}')">${coffTwoPrice}р</button>
+            <div class="addCof">
+              <p>${coffTwoPrice}р</p>
+              <button onclick="vibor('${coffTwoName}', ${coffTwoPrice}, '${coffTwoIm}')">+</button>
+            </div>
         </div>
         <div class="cardCoffee">
             <img src="${coffThreeIm}" alt="Фотография_Кофе">
             <p>${coffThreeName}</p>
-            <button onclick="vibor('${coffThreeName}', ${coffThreePrice}, '${coffThreeIm}')">${coffThreePrice}р</button>
+            <div class="addCof">
+              <p>${coffThreePrice}р</p>
+              <button onclick="vibor('${coffThreeName}', ${coffThreePrice}, '${coffThreeIm}')">+</button>
+            </div>
         </div>
     </div>`;
 };
@@ -509,33 +534,33 @@ const navigatorCoffee = (item) => {
   let s = "";
   if (item == 1) {
     s += `<div class="navigator">
-            <button class="but_up" onclick="navigatorCoffee(1)">Up</button>
+            <button class="but_up" onclick="navigatorCoffee(1)"><img class="imgUp" src="images/Up.jpg" alt="вверх"></button>
             <button class="but_but" onclick="klickCoffee(1)">Black</button>
             <button class="but_but" onclick="klickCoffee(2)">Capuchino</button>
             <button class="but_but" onclick="klickCoffee(3)">Americano</button>
             <button class="but_but" onclick="klickCoffee(4)">Latte</button>
             <button class="but_but" onclick="klickCoffee(5)">Expresso</button>
-            <button class="but_down" onclick="navigatorCoffee(2)">Down</button>
+            <button class="but_down" onclick="navigatorCoffee(2)"><img class="imgDown" src="images/Down.jpg" alt="вниз"></button>
         </div>`;
   } else if (item == 2) {
     s += `<div class="navigator">
-            <button class="but_up" onclick="navigatorCoffee(1)">Up</button>
+            <button class="but_up" onclick="navigatorCoffee(1)"><img class="imgUp" src="images/Up.jpg" alt="вверх"></button>
             <button class="but_but" onclick="klickCoffee(2)">Capuchino</button>
             <button class="but_but" onclick="klickCoffee(3)">Americano</button>
             <button class="but_but" onclick="klickCoffee(4)">Latte</button>
             <button class="but_but" onclick="klickCoffee(5)">Expresso</button>
             <button class="but_but" onclick="klickCoffee(6)">Flat</button>
-            <button class="but_down" onclick="navigatorCoffee(3)">Down</button>
+            <button class="but_down" onclick="navigatorCoffee(3)"><img class="imgDown" src="images/Down.jpg" alt="вниз"></button>
         </div>`;
   } else if (item == 3) {
     s += `<div class="navigator">
-            <button class="but_up" onclick="navigatorCoffee(2)">Up</button>
+            <button class="but_up" onclick="navigatorCoffee(2)"><img class="imgUp" src="images/Up.jpg" alt="вверх"></button>
             <button class="but_but" onclick="klickCoffee(3)">Americano</button>
             <button class="but_but" onclick="klickCoffee(4)">Latte</button>
             <button class="but_but" onclick="klickCoffee(5)">Expresso</button>
             <button class="but_but" onclick="klickCoffee(6)">Flat</button>
             <button class="but_but" onclick="klickCoffee(7)">Rus</button>
-            <button class="but_down" onclick="navigatorCoffee(3)">Down</button>
+            <button class="but_down" onclick="navigatorCoffee(3)"><img class="imgDown" src="images/Down.jpg" alt="вниз"></button>
         </div>`;
   }
 
@@ -640,7 +665,7 @@ document.addEventListener('keydown', function(event){ /*Если пользов�
     });
     if (!check){
       console.log("No");
-      /*Выводим сообщение что такого кофэ нету*/
+      alert("Извините, но в нашем магазине нету такого кофе");
     }
     (document.querySelector(".input-with-icon")).value = ""; // Очищаем input
   }
@@ -656,9 +681,9 @@ const searchCoffee = (Name, Price, Im) => {
 }
 
 
-// Открытие формы Order Status
-
+// Открытие формы Order Status и Реализация добавления кофе в список заказов 
 silka.addEventListener("click", () => {   
+  ProzrachnotOnBody(true);
   updateTask();
 }); 
 
@@ -671,11 +696,47 @@ const updateTask = () => {
         <h1>Order Status</h1>
         <a id="exithide" href="#" onclick="closeform()">HIDE</a>
       </div>
-  </div>`
-  update.innerHTML = s; 
+  </div>
+  <div class="Ordered_Kitchen">
+        <p>Ordered</p>
+        <div class="SavedOrder">
+
+        </div>
+    </div>`;
+  update.innerHTML = s;
+
+  const savedOrder = document.querySelector('.SavedOrder');
+  let s2 = '';
+  listOrder.forEach(lis => {
+    s2 += `<div class="CoffeYourOrder">
+                <img src="${lis[2]}" alt="кофе">
+                <p class="prco">${lis[0]}</p>
+                <div class="countisto">
+                  <p>${lis[4]}</p>
+                </div>
+            </div>`;
+  })
+  savedOrder.innerHTML = s2;
 }; 
 
 const closeform = () => {  
   update.classList.add("close"); 
-  update.classList.remove("open"); 
+  update.classList.remove("open");
+  ProzrachnotOnBody(false);
 };  
+
+const ProzrachnotOnBody = (item) => { // Делаем прозрачный экран/Делаем не прозрачный экран
+  const header = document.querySelector('header');
+  const main = document.querySelector('main');
+  const nav = document.querySelector('nav');
+  if (item){
+    header.style.background = '#f5f5f5'; header.style.opacity = '.3';
+    main.style.background = '#f5f5f5'; main.style.opacity = '.3';
+    nav.style.background = '#f5f5f5'; nav.style.opacity = '.3';
+  }
+  else{
+    header.style.background = 'rgb(236, 236, 236)'; header.style.opacity = '1';
+    main.style.background = 'rgb(236, 236, 236)'; main.style.opacity = '1';
+    nav.style.background = 'rgb(236, 236, 236)'; nav.style.opacity = '1';
+  }
+} 
