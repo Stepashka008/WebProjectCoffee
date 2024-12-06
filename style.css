@@ -315,6 +315,24 @@ header{
     margin-left: 15px;
     margin-top: 7px;
 }
+.FinalPriceFromOrder{
+    display: flex;
+    flex-direction: row;
+    position: fixed;
+    top: 80%;
+    left: 20%;
+    transform: translate(-40%, -50%);
+}
+.FinalPriceFromOrder p{
+    font-size: 30px;
+}
+.total{
+    margin-right: 30px;
+}
+
+@media screen and (max-width:1441px){
+    
+}
 
 
 

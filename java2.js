@@ -1,7 +1,6 @@
 const sizeCoffee = document.querySelector('.sizeCoffee'); // Размер кофе
 const extraCoffee = document.querySelector('.extraCoffee'); // Сахар или молоко
 const milkTypeCoffee = document.querySelector('.milkTypeCoffee'); // Размер кофе
-
 const update = document.querySelector('.update'); // Наше окно order status
 const silka = document.querySelector('.OS'); // Наша надпись Order Status
 const priceForOrderAndBuy = document.querySelector('.priceForOrder'); // Наша надпись Order Status
@@ -214,7 +213,6 @@ const doppsCoffee = (siz, j, i) => {
 }
 showAllViborOrder();
 
-
 // Расчет чены по кол-ву кофе
 const PriceOrderMade = (c) => {
   let yourPrice = (priceCoffee + fixPrice) * c;
@@ -232,31 +230,34 @@ const PriceOrderMade = (c) => {
 }
 PriceOrderMade(1);
 
-
 // Добавление заказа в listOrder - localStorage 
 const addOrderInList = (yourPrice,c) => {
-  let ordered = [];
-  let check = false;
-  listOrder.forEach(elem => {
-    if (elem[0] == data.Name){
-      elem[4] += 1;
-      check = true;
-    }
-  })
-
-  if (!check){ // Сохранение в localStorage
-    ordered.push(data.Name);
-    ordered.push(data.Price);
-    ordered.push(data.Im);
-    ordered.push(yourPrice);
-    ordered.push(c);
-    listOrder.push(ordered);
+  if (c < 1){
+    alert("Вы не можете заказать кофе, так как кол-во кофе меньше 1")
   }
-    updateocsl();
-    console.log(listOrder);
-    location.reload(false); // Перезагрузка страницы
+  else{
+    let ordered = [];
+    let check = false;
+    listOrder.forEach(elem => {
+      if (elem[0] == data.Name){
+        elem[4] += 1;
+        check = true;
+      }
+    })
+  
+    if (!check){ // Сохранение в localStorage
+      ordered.push(data.Name);
+      ordered.push(data.Price);
+      ordered.push(data.Im);
+      ordered.push(yourPrice);
+      ordered.push(c);
+      listOrder.push(ordered);
+    }
+      updateocsl();
+      console.log(listOrder);
+      location.reload(false); // Перезагрузка страницы
+  }
 }
-
 
 // Открытие формы Order Status и Реализация добавления кофе в список заказов 
 silka.addEventListener("click", () => {   
