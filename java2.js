@@ -215,6 +215,7 @@ showAllViborOrder();
 
 // Расчет чены по кол-ву кофе
 const PriceOrderMade = (c) => {
+  if (c <= 0) { c = 0; }
   let yourPrice = (priceCoffee + fixPrice) * c;
   console.log(yourPrice);
   let f = "";

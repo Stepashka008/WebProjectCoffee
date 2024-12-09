@@ -134,7 +134,7 @@ header{
     position: absolute; top: 20%; left: 176%; transform: translate(-50%, -50%); /**/
 }
 .OS:hover{
-    color: #AC8F64;
+    color: rgb(255, 86, 86);
 }
 .countOrder{ /*Кол-во заказов*/
     width: 50px;
@@ -357,17 +357,10 @@ header{
 }
 @media screen and (max-width:769px){
     nav{
-        width: 100px;
+        width: 0px;
     }
-    #navKar img{
-        width: 50px;
-        height: 50px;
-        background: white;
-        border: 1px solid black;
-        box-shadow: 0px 3px 5px 3px;
-        margin-top: 70px;
-        margin-left: 30px;
-        margin-right: 10px;
+    .Selection{
+        margin-left: 75px;
     }
     .input-with-icon{
         height: 40px;
@@ -458,7 +451,7 @@ header{
         height: 195px;
         position: fixed;
         top: 43%;
-        left: 6%;
+        left: 60.5%;
         transform: translate(-40%, -50%);
         background: rgb(255, 255, 255);
         box-shadow: 0px 0px 20px 5px;
@@ -503,6 +496,12 @@ header{
     }
 }
 @media screen and (max-width: 381px){
+    nav{
+        width: 0;
+    }
+    .Selection{
+        margin-left: 40px;
+    }
     .more_card_coffe{
         display: flex;
         flex-direction: column;
@@ -547,8 +546,8 @@ header{
         width: 100px;
         height: 195px;
         position: fixed;
-        top: 40%;
-        left: 12%;
+        top: 43%;
+        left: 28%;
         transform: translate(-40%, -50%);
         background: rgb(255, 255, 255);
         box-shadow: 0px 0px 20px 5px;
@@ -582,10 +581,10 @@ header{
     }
 
     .update{
-        width: 360px;
+        width: 385px;
         height: 965px;
         top: 0%;
-        left: 10%;
+        left: 0%;
     }
     .FinalPriceFromOrder{
         top: 95%;

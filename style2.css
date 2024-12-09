@@ -182,7 +182,7 @@ h2 a:hover{
     position: absolute; top: 20%; left: 176%; transform: translate(-50%, -50%);
 }
 .OS:hover{
-    color: #AC8F64;
+    color: rgb(255, 86, 86);
 }
 .countOrder{ /*Кол-во заказов*/
     width: 50px;
@@ -321,6 +321,11 @@ h2 a:hover{
     }
 }
 @media screen and (max-width:769px){
+    header{
+        display: flex;
+        flex-direction: row;
+        justify-content: space-around;
+    }
     .textCoffeeOglavlenie p{
         width: 600px;
     }
@@ -328,28 +333,58 @@ h2 a:hover{
         font-size: 70px;
     }
     .OrderStatus{
-    margin-right: 0px;
-    }   
+        margin-right: 200px;
+    }
     .update{
         top: 0%;
-        left: 51.5%;
+        left: 35%;
     }
     .FinalPriceFromOrder{
         top: 94%;
-        left: 55%;
+        left: 45%;
+    }
+    .IMGALL{
+        display: none;
+    }
+    .backToMain{
+        margin-top: 18px;
+        margin-right: 40px;
+    }
+    main{
+        margin-left: 50px;
     }
 }
 @media screen and (max-width: 381px){
-    .textCoffeeOglavlenie p{
-        width: 600px;
-    }
-    .textCoffeeOglavlenie h1{
-        font-size: 70px;
+    main{
+        margin-left: 10px;
+        margin-top: 10px
+    };
+    header{
+        display: flex;
+        flex-direction: row;
+        justify-content: space-around;
     }
     .OrderStatus{
-        margin-right: 0px;
-        margin-left: 300px;
-    }  
+        margin-left: 30px;
+        margin-right: 20px;
+    }
+    .OS{
+        margin-top: 30px;
+    }
+    .countOrder{
+        margin-top: 30px;
+    }
+    .backToMain{
+        width: 300px;
+        font-size: 15px;
+    }
+    .textCoffeeOglavlenie p{
+        width: 600px;
+        font-size: 25px;
+    }
+    .textCoffeeOglavlenie h1{
+        font-size: 93px;
+    }
     .name_dop{
         font-size: 25px;
     }
@@ -376,12 +411,17 @@ h2 a:hover{
         font-size: 23px;
         padding-top: 5px;
     }
+    .priceForOrder{
+        width: 500px;
+        margin-left: 100px;
+    }
     .cPC{
         font-size: 65px;
     }
     .countCoffee{
         width: 150px;
         height: 50px;
+        margin-left: 40px;
     }
     .countCoffee button{
         width: 50px;
@@ -394,6 +434,7 @@ h2 a:hover{
     .but_buy_price{
         width: 290px;
         height: 80px;
+        margin-left: 120px;
     }
     .but_buy_price button{
         width: 290px;
@@ -401,11 +442,11 @@ h2 a:hover{
     }
     .update{
         top: 0%;
-        left: 51.5%;
+        left: 30%;
         height: 1400px;
     }
     .FinalPriceFromOrder{
         top: 94%;
-        left: 55%;
+        left: 35%;
     }
 }

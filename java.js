@@ -267,6 +267,7 @@ const menu = document.querySelector('.menu');
 const silka = document.querySelector('.OS');
 const brow = document.querySelector(".input-with-icon");
 const couCof = document.querySelector(".countOrder");
+const orderStatusVector = document.querySelector('.OrderStatusVector');
 
 // Загрузка списка заказов
 let listOrder = [];
@@ -516,12 +517,19 @@ const ProzrachnotOnBody = (item) => { // Делаем прозрачный эк�
 // Бургер меню
 function handleResize() {
   const width = window.innerWidth;
-  if (width <= 769) {
-    let s = `<img src="images/burger.jpg" alt="Бургер" onclick="openMenu()">`
-    navKar.innerHTML = s;
+  if (width >= 769){
+    let s = `<img src="images/Vector.jpg" alt="Бургер" onclick="openMenu()">`
+    orderStatusVector.innerHTML = s;
   }
   else{
-    navigatorCoffee(0);
+    if (width < 769) {
+      let s = `<img src="images/burger.jpg" alt="Бургер" onclick="openMenu()">`
+      orderStatusVector.innerHTML = s;
+    }
+  
+    else{
+      navigatorCoffee(0);
+    }
   }
 }
 window.addEventListener('resize', handleResize);
@@ -543,14 +551,14 @@ const openMenu = () => {
   menu.innerHTML = s;
 
   let s1 = `<img src="images/burger.jpg" alt="Бургер" onclick="closeMenu()">`
-  navKar.innerHTML = s1;
+  orderStatusVector.innerHTML = s1;
 }
 const closeMenu = () => {  
   menu.classList.add("closeM"); 
   menu.classList.remove("openM");
   if (window.innerWidth < 769){
     let s = `<img src="images/burger.jpg" alt="Бургер" onclick="openMenu()">`
-    navKar.innerHTML = s;
+    orderStatusVector.innerHTML = s;
   }
 };
 closeMenu();
