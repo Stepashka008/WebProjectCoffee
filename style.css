@@ -1,6 +1,6 @@
 *{
-    font-family: 'Times New Roman', Times, serif;
     margin: 0;
+    font-family:'Times New Roman', Times, serif;
 }
 
 body{
@@ -8,10 +8,19 @@ body{
     flex-direction: row;
     background: rgb(236, 236, 236);
 }
+footer{
+    height: 50px;
+}
+main{
+    background: rgb(236, 236, 236);
+    opacity: 1;
+}
 
 /*Навигационная панель*/
 nav{
     width: 200px;
+    background: rgb(236, 236, 236);
+    opacity: 1;
 }
 .navigator{
     display: flex;
@@ -20,6 +29,11 @@ nav{
     margin-left: 80px;
     width: 150px;
 }
+.navigatinPanel{
+    display: flex;
+    flex-direction: column;
+}
+
 .but_up{
     background: rgb(255, 255, 255);
     font-size: 20px;
@@ -69,6 +83,8 @@ nav{
 header{
     display: flex;
     flex-direction: row;
+    background: rgb(236, 236, 236);
+    opacity: 1;
 }
 
 #boxCoffee{
@@ -118,7 +134,21 @@ header{
     position: absolute; top: 20%; left: 176%; transform: translate(-50%, -50%); /**/
 }
 .OS:hover{
-    color: #AC8F64;
+    color: rgb(255, 86, 86);
+}
+.countOrder{ /*Кол-во заказов*/
+    width: 50px;
+    height: 50px;
+    background: rgb(255, 86, 86);
+    color: black;
+    margin-top: 30px;
+    position: absolute; top: 20%; left: 255%; transform: translate(-50%, -50%);
+    border-radius: 50%;
+    text-align: center;
+}
+.countOrder p{
+    font-size: 25px;
+    margin-top: 11px;
 }
 
 #productName{
@@ -146,11 +176,11 @@ header{
     margin-left: 80px;
     padding: 10px 10px 10px 10px;
     width: 310px;
+    border: 3px solid white;
+    box-shadow: 0px 0px 20px 1px;
 }
 .cardCoffee:hover{
     border: 3px solid rgb(182, 159, 96);
-    margin-top: 54px;
-    margin-left: 74px;
 }
 
 .cardCoffee img{
@@ -164,19 +194,34 @@ header{
     font-size: 30px;
     text-align: center;
 }
-
-.cardCoffee button{
-    margin-top: 40px;
-    font-size: 20px;
-    width: 120px;
-    height: 47px;
-    margin-left: 80px;
-    border-radius: 12px;
-    background: rgb(211, 210, 210);
-    border: 1px solid rgb(211, 210, 210);
+.addCof{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    width: 100px;
+    height: 35px;
+    margin-top: 50px;
+    background: rgb(209, 209, 209);
+    border-radius: 10px;
+    margin-left: 100px;
 }
-.cardCoffee button:hover{
+.addCof p{
+    font-size: 20px;
+    margin-bottom: 2px;
+    margin-left: 20px;
+}
+.addCof button{
+    font-size: 20px;
+    width: 35px;
+    height: 35px;
+    border-radius: 10px;
+    background: rgb(255, 86, 86);
+    border: 1px solid rgb(255, 86, 86);
+    font-size: 25px;
+}
+.addCof button:hover{
     background: rgb(206, 189, 143);
+    border: 1px solid rgb(206, 189, 143);
 }
 
 
@@ -187,21 +232,21 @@ header{
 
 .update{
     display: flex;
-    width: 400px;
+    width: 500px;
     height: 965px;
     position: fixed;
-    top: 50%;
-    left: 62.6%;
-    transform: translate(-40%, -50%);
+    top: 0%;
+    left: 68.5%;
     flex-direction: column;
     justify-content: center;
     background: rgb(209, 209, 209);
+    box-shadow: 0px 0px 20px 5px;
 }
 .update_form{
     display: flex;
     flex-direction: column;
     justify-content: center;
-    margin-top: 10px;
+    margin-top: 20px;
     margin-left: 10px;
 }
 .mainOreder{
@@ -222,6 +267,329 @@ header{
 }
 .open{
     display: block;
+}
+.Ordered_Kitchen{
+    display: flex;
+    flex-direction: column;
+}
+.Ordered_Kitchen p{
+    font-size: 20px;
+    margin-left: 30px;
+}
+.SavedOrder{
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    margin-top: 10px;
+    margin-left: 10px;
+    margin-right: 10px;
+}
+.CoffeYourOrder{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    border: 1px solid black;
+    box-shadow: 0px 3px 5px 3px;
+    border-radius: 5px;
+    padding-top: 5px;
+    padding-bottom: 5px;
+}
+.CoffeYourOrder img{
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    margin-left: 20px;
+}
+.prco{
+    margin-top: 12px;
+}
+.countisto{
+    margin-top: 5px;
+    margin-bottom: 5px;
+    border-radius: 50%;
+    background: rgb(255, 86, 86);
+    width: 40px;
+    margin-right: 20px;
+}
+.countisto p{
+    margin-left: 15px;
+    margin-top: 7px;
+}
+.FinalPriceFromOrder{
+    display: flex;
+    flex-direction: row;
+    position: fixed;
+    top: 95%;
+    left: 75%;
+    transform: translate(-40%, -50%);
+}
+.FinalPriceFromOrder p{
+    font-size: 30px;
+}
+.total{
+    margin-right: 30px;
+}
+
+
+
+
+
+
+
+@media screen and (max-width:1441px){
+    .cardCoffee{
+        margin-top: 30px;
+        margin-left: 40px;
+    }
+    .input-with-icon{
+        width: 670px;
+        margin-left: 40px;
+    }
+    .OrderStatus{
+        margin-left: 45px;
+    }
+    .update{
+        width: 450px;
+        height: 965px;
+        top: 0%;
+        left: 68.5%;
+    }
+}
+@media screen and (max-width:769px){
+    nav{
+        width: 0px;
+    }
+    .Selection{
+        margin-left: 75px;
+    }
+    .input-with-icon{
+        height: 40px;
+        margin-left: 10px;
+        margin-top: 80px;
+        width: 270px;
+        font-size: 16px;
+    }
+    .cardCoffee{
+        width: 170px;
+        height: 240px;
+        margin-left: 10px;
+    }
+    .cardCoffee p{
+        font-size: 16px;
+    }
+    .cardCoffee img{
+        width: 170px;
+        height: 170px;
+    }
+    .addCof{
+        width: 70px;
+        height: 25px;
+        margin-top: 0;
+        margin-left: 45px;
+    }
+    .addCof button{
+        width: 70px;
+        height: 25px;
+        color: rgb(255, 86, 86);
+    }
+    .addCof button:hover{
+        color: rgb(206, 189, 143);
+    }
+    .addCof p{
+        font-size: 16px;
+        margin-right: 5px;
+        margin-bottom: 20px;
+    }
+
+    .OrderStatus{
+        margin-top: 55px;
+        margin-left: 30px;
+    }
+    .OrderStatusVector{
+        width: 90px;
+        height: 90px;
+        border-radius: 50%;
+        background: #AC8F64;
+    }
+    .OrderStatusVector img{
+        width: 38px;
+        height: 33px;
+        margin-top: 30px;
+        margin-left: 27px;
+        border-radius: 90px;
+    }
+    .OS{ /*Order Status*/
+        color: black;
+        text-decoration: none;
+        width: 200px;
+        margin-top: 30px;
+        font-size: 16px;
+        margin-right: 50px;
+        position: absolute; top: 18%; left: 196%; transform: translate(-50%, -50%); /**/
+    }
+    .OS:hover{
+        color: #AC8F64;
+    }
+    .countOrder{ /*Кол-во заказов*/
+        width: 40px;
+        height: 40px;
+        background: rgb(255, 86, 86);
+        color: black;
+        margin-top: 30px;
+        position: absolute; top: 18%; left: 235%; transform: translate(-50%, -50%);
+        border-radius: 50%;
+        text-align: center;
+    }
+    .countOrder p{
+        font-size: 18px;
+        margin-top: 10px;
+    }
+
+    /* Бургер меню*/
+    .menu{
+        width: 100px;
+        height: 195px;
+        position: fixed;
+        top: 43%;
+        left: 60.5%;
+        transform: translate(-40%, -50%);
+        background: rgb(255, 255, 255);
+        box-shadow: 0px 0px 20px 5px;
+        color: rgb(0, 0, 0);
+        border-radius: 20px;
+    }
+    .viborka{
+        display: flex;
+        flex-direction: column;
+        width: 90px;
+        height: 150px;
+        margin-top: 11px;
+        margin-left: 5px;
+        gap: 5px;
+    }
+    .viborka button{
+        border-radius: 20px;
+        background: rgb(255, 255, 255);
+        border: 1px solid rgb(255, 255, 255);
+        
+    }
+    .viborka button:hover{
+        background: #AC8F64;
+        border: 1px solid #AC8F64;
+    }
+    .closeM{
+        display: none;
+    }
+    .openM{
+        display: block;
+    }
+
+    .update{
+        width: 400px;
+        height: 965px;
+        top: 0%;
+        left: 48.5%;
+    }
+    .FinalPriceFromOrder{
+        top: 95%;
+        left: 60%;
+    }
+}
+@media screen and (max-width: 381px){
+    nav{
+        width: 0;
+    }
+    .Selection{
+        margin-left: 40px;
+    }
+    .more_card_coffe{
+        display: flex;
+        flex-direction: column;
+    }
+    .input-with-icon{
+        display: none;
+    }
+    .cardCoffee{
+        width: 270px;
+        height: 370px;
+        margin-left: 0px;
+    }
+    .cardCoffee p{
+        font-size: 25px;
+    }
+    .cardCoffee img{
+        width: 270px;
+        height: 270px;
+    }
+    .addCof{
+        width: 100px;
+        height: 40px;
+        margin-top: 0;
+        margin-left: 80px;
+    }
+    .addCof button{
+        width: 100px;
+        height: 40px;
+        color: black;
+    }
+    .addCof button:hover{
+        color: #AC8F64;
+    }
+    .addCof p{
+        font-size: 16px;
+        margin-right: 5px;
+        margin-bottom: 0px;
+        margin-top: 10px;
+    }
+
+    .menu{
+        width: 100px;
+        height: 195px;
+        position: fixed;
+        top: 43%;
+        left: 28%;
+        transform: translate(-40%, -50%);
+        background: rgb(255, 255, 255);
+        box-shadow: 0px 0px 20px 5px;
+        color: rgb(0, 0, 0);
+        border-radius: 20px;
+    }
+    .viborka{
+        display: flex;
+        flex-direction: column;
+        width: 90px;
+        height: 150px;
+        margin-top: 11px;
+        margin-left: 5px;
+        gap: 5px;
+    }
+    .viborka button{
+        border-radius: 20px;
+        background: rgb(255, 255, 255);
+        border: 1px solid rgb(255, 255, 255);
+        
+    }
+    .viborka button:hover{
+        background: #AC8F64;
+        border: 1px solid #AC8F64;
+    }
+    .closeM{
+        display: none;
+    }
+    .openM{
+        display: block;
+    }
+
+    .update{
+        width: 385px;
+        height: 965px;
+        top: 0%;
+        left: 0%;
+    }
+    .FinalPriceFromOrder{
+        top: 95%;
+        left: 30%;
+    }
 }
 
 

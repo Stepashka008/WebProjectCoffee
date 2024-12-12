@@ -1,70 +1,224 @@
 *{
     margin: 0;
+    font-family:'Times New Roman', Times, serif;
 }
-
+/*body{
+    background: #f5f5f5; // white
+    opacity: .3; // 1
+}*/
 header{
     display: flex;
     flex-direction: row;
-    justify-content: space-around;
+    justify-content: space-between;
+    background: white;
+    opacity: 1;
 }
 main{
     display: flex;
     flex-direction: row;
+    background: white;
+    opacity: 1
+}
+.backToMain{
+    display: flex;
+    flex-direction: row;
+    margin-left: 60px;
+}
+.backToMain img{
+    width: 50px;
+    height: 30px;
+    margin-top: 48px;
+    margin-right: 10px;
+}
+.viborCoffee{
+    margin-left: 50px;
+}
+h2{
+    margin-top: 46px;
+    border: 2px solid #AC8F64;
+    width: 200px;
+    height: 28px;
+    padding-top: 2px;
+    padding-left: 10px;
+    border-radius: 10px;
+}
+h2:hover{
+    border: 2px solid rgb(255, 86, 86);
+}
+h2 a{
+    text-decoration: none;
+    color: black;
+}
+h2 a:hover{
+    color: #AC8F64;
+}
+.name_dop{
+    color: rgb(187, 187, 187);
 }
 .choice{
     display: flex;
     flex-direction: column;
+    margin-top: 20px;
 }
-.sizeCoffee{
+.sizeCoffeeBox{
+    display: flex;
+    flex-direction: column;
+    height: 100px;
+    border-radius: 20px;
+    box-shadow: 0px 0px 5px 1px;
+    margin-top: 10px;
+    margin-bottom: 10px;
+}
+.but_vib_size{
+    border-radius: 20px;
+    color: black;
+    width: 110px;
+    height: 30px;
+}
+.sizeCoffeeBox img{
+    margin-left: 35px;
+    border-radius: 40%;
+    margin-top: 15px;
+    margin-bottom: 5px;
+}
+.sizeCoffee, .extraCoffee, .milkTypeCoffee{
     display: flex;
     flex-direction: row;
     gap: 10px;
 }
-/*.extraCoffee{
-    
-}
-.milkTypeCoffee{
-    
-}*/
-.but_vib{
-    border-radius: 10px;
+
+.but_vib_extra, .but_vib_milktype{
+    border-radius: 20px;
     color: black;
-    width: 80px;
+    width: 110px;
     height: 30px;
-    background: rgb(243, 243, 243);
-    border: 1px solid rgb(243, 243, 243);
+    border: 1px solid #AC8F64;
+    margin-top: 10px;
+    margin-bottom: 10px;
+    box-shadow: 0px 0px 5px 1px;
 }
-.but_vib:hover{
-    background: #AC8F64;
-    border: 1px solid black;
+
+.priceForOrder{
+    display: flex;
+    flex-direction: row;
+    gap: 10px;
+    margin-top: 20px;
 }
-.but_vib:focus{
-    background: #AC8F64;
-    border: 1px solid black;
+.countCoffee{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    width: 80px;
+    height: 25px;
+    background-color: white;
+    border: 1px solid white;
+    border-radius: 20px;
+    margin-top: 15px;
+    box-shadow: 0px 0px 5px 1px;
+}
+.countCoffee button{
+    color: #AC8F64;
+    background: white;
+    border: 1px solid white;
+    border-radius: 20px;
+}
+.countCoffee p{
+    margin-top: 4px;
+}
+.cPC{
+    font-size: 45px;
+    width: 110px;
+}
+.but_buy_price{
+    display: flex;
+    justify-content: center;
+    width: 200px;
+    height: 60px;
+    border-radius: 25px;
+    margin-top: 20px;
+}
+.but_buy_price button{
+    width: 200px;
+    border-radius: 25px;
+    background: rgb(255, 86, 86);
+    border: 1px solid rgb(255, 86, 86);
+    color: white;
+    font-size: 20px;
+}
+.but_buy_price button:hover{
+    background: white;
+    border: 1px solid rgb(255, 86, 86);
+    color: rgb(255, 86, 86);
 }
 
 
+
+.OrderStatus{
+    margin-top: 20px;
+    margin-right: 300px;
+    display: inline-block; /**/
+    position: relative;
+}
+.OrderStatusVector{
+    width: 110px;
+    height: 110px;
+    border-radius: 50%;
+    background: #AC8F64;
+}
+.OrderStatusVector img{
+    width: 48px;
+    height: 38px;
+    margin-top: 35px;
+    margin-left: 30px;
+    border-radius: 90px;
+}
+.OS{ /*Order Status*/
+    color: black;
+    text-decoration: none;
+    width: 200px;
+    margin-top: 30px;
+    font-size: 20px;
+    margin-right: 50px;
+    position: absolute; top: 20%; left: 176%; transform: translate(-50%, -50%);
+}
+.OS:hover{
+    color: rgb(255, 86, 86);
+}
+.countOrder{ /*Кол-во заказов*/
+    width: 50px;
+    height: 50px;
+    background: rgb(255, 86, 86);
+    color: black;
+    margin-top: 30px;
+    position: absolute; top: 20%; left: 255%; transform: translate(-50%, -50%);
+    border-radius: 50%;
+    text-align: center;
+}
+.countOrder p{
+    font-size: 25px;
+    margin-top: 11px;
+}
 
 
 
 
 .update{
     display: flex;
-    width: 400px;
+    width: 500px;
     height: 965px;
     position: fixed;
-    top: 50%;
-    left: 62.6%;
-    transform: translate(-40%, -50%);
+    top: 0%;
+    left: 68.5%;
     flex-direction: column;
     justify-content: center;
     background: rgb(209, 209, 209);
+    box-shadow: 0px 0px 20px 5px;
 }
 .update_form{
     display: flex;
     flex-direction: column;
     justify-content: center;
-    margin-top: 10px;
+    margin-top: 20px;
     margin-left: 10px;
 }
 .mainOreder{
@@ -85,4 +239,214 @@ main{
 }
 .open{
     display: block;
+}
+.Ordered_Kitchen{
+    display: flex;
+    flex-direction: column;
+}
+.Ordered_Kitchen p{
+    font-size: 20px;
+    margin-left: 30px;
+}
+.SavedOrder{
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    margin-top: 10px;
+    margin-left: 10px;
+    margin-right: 10px;
+}
+.CoffeYourOrder{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    border: 1px solid black;
+    box-shadow: 0px 3px 5px 3px;
+    border-radius: 5px;
+    padding-top: 5px;
+    padding-bottom: 5px;
+}
+.CoffeYourOrder img{
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    margin-left: 20px;
+}
+.prco{
+    margin-top: 12px;
+}
+.countisto{
+    margin-top: 5px;
+    margin-bottom: 5px;
+    border-radius: 50%;
+    background: rgb(255, 86, 86);
+    width: 40px;
+    margin-right: 20px;
+}
+.countisto p{
+    margin-left: 15px;
+    margin-top: 7px;
+}
+.FinalPriceFromOrder{
+    display: flex;
+    flex-direction: row;
+    position: fixed;
+    top: 80%;
+    left: 120%;
+}
+.FinalPriceFromOrder p{
+    font-size: 30px;
+}
+.total{
+    margin-right: 30px;
+}
+
+
+.textCoffeeOglavlenie p{
+    width: 800px;
+    margin-left: 10px;
+}
+.textCoffeeOglavlenie h1{
+    font-size: 85px;
+}
+
+@media screen and (max-width:1441px){
+    .update{
+        top: 0%;
+        left: 65.5%;
+    }
+    .FinalPriceFromOrder{
+        top: 92%;
+        left: 67%;
+    }
+}
+@media screen and (max-width:769px){
+    header{
+        display: flex;
+        flex-direction: row;
+        justify-content: space-around;
+    }
+    .textCoffeeOglavlenie p{
+        width: 600px;
+    }
+    .textCoffeeOglavlenie h1{
+        font-size: 70px;
+    }
+    .OrderStatus{
+        margin-right: 200px;
+    }
+    .update{
+        top: 0%;
+        left: 35%;
+    }
+    .FinalPriceFromOrder{
+        top: 94%;
+        left: 45%;
+    }
+    .IMGALL{
+        display: none;
+    }
+    .backToMain{
+        margin-top: 18px;
+        margin-right: 40px;
+    }
+    main{
+        margin-left: 50px;
+    }
+}
+@media screen and (max-width: 381px){
+    main{
+        margin-left: 10px;
+        margin-top: 10px
+    };
+    header{
+        display: flex;
+        flex-direction: row;
+        justify-content: space-around;
+    }
+    .OrderStatus{
+        margin-left: 30px;
+        margin-right: 20px;
+    }
+    .OS{
+        margin-top: 30px;
+    }
+    .countOrder{
+        margin-top: 30px;
+    }
+    .backToMain{
+        width: 300px;
+        font-size: 15px;
+    }
+    .textCoffeeOglavlenie p{
+        width: 600px;
+        font-size: 25px;
+    }
+    .textCoffeeOglavlenie h1{
+        font-size: 93px;
+    }
+    .name_dop{
+        font-size: 25px;
+    }
+    .sizeCoffeeBox{
+        width: 120px;
+        height: 120px;
+    }
+    .sizeCoffeeBox img{
+        margin-top: 30px;
+        margin-left: 40px;
+    }
+    .sizeCoffeeBox button{
+        font-size: 25px;
+        margin-left: 5px;
+    }
+    .extraCoffee button{
+        width: 200px;
+        height: 50px;
+        font-size: 30px;
+    }
+    .milkTypeCoffee button{
+        width: 190px;
+        height: 50px;
+        font-size: 23px;
+        padding-top: 5px;
+    }
+    .priceForOrder{
+        width: 500px;
+        margin-left: 100px;
+    }
+    .cPC{
+        font-size: 65px;
+    }
+    .countCoffee{
+        width: 150px;
+        height: 50px;
+        margin-left: 40px;
+    }
+    .countCoffee button{
+        width: 50px;
+        font-size: 30px;
+    }
+    .countCoffee p{
+        font-size: 30px;
+        margin-top: 9px;
+    }
+    .but_buy_price{
+        width: 290px;
+        height: 80px;
+        margin-left: 120px;
+    }
+    .but_buy_price button{
+        width: 290px;
+        font-size: 35px;
+    }
+    .update{
+        top: 0%;
+        left: 30%;
+        height: 1400px;
+    }
+    .FinalPriceFromOrder{
+        top: 94%;
+        left: 35%;
+    }
 }
