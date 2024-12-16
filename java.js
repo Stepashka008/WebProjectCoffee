@@ -370,7 +370,7 @@ const navigatorCoffee = (item) => {
     let n = 0;
     let k = item
     while (n != 5){
-      if (k == 7){
+      if (k == NamCof.length){
         k = 0;
       }
       elem.push(k);

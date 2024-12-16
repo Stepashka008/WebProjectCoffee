@@ -369,36 +369,42 @@ header{
         width: 270px;
         font-size: 16px;
     }
+    .more_card_coffe{
+        display: flex;
+        flex-direction: column;
+        margin-left: 50px;
+    }
     .cardCoffee{
-        width: 170px;
-        height: 240px;
+        width: 400px;
+        height: 600px;
         margin-left: 10px;
     }
     .cardCoffee p{
-        font-size: 16px;
+        font-size: 40px;
     }
     .cardCoffee img{
-        width: 170px;
-        height: 170px;
+        width: 400px;
+        height: 400px;
     }
     .addCof{
-        width: 70px;
-        height: 25px;
+
+        width: 200px;
+        height: 85px;
         margin-top: 0;
-        margin-left: 45px;
+        margin-left: 85px;
     }
     .addCof button{
         width: 70px;
-        height: 25px;
+        height: 85px;
         color: rgb(255, 86, 86);
     }
     .addCof button:hover{
         color: rgb(206, 189, 143);
     }
     .addCof p{
-        font-size: 16px;
-        margin-right: 5px;
-        margin-bottom: 20px;
+        font-size: 40px;
+        margin-left: 35px;
+        margin-top: 20px;
     }
 
     .OrderStatus{
